@@ -1,30 +1,36 @@
 // Promise.allSettled
 const formatSettledResult = (success, value) =>
-  success
-    ? { status: "fulfilled", value }
-    : { status: "rejected", reason: value };
+    success ?
+    {
+        status: "fulfilled",
+        value
+    } :
+    {
+        status: "rejected",
+        reason: value
+    };
 
-Promise.allSettled = function(iterators) {
-  const promises = Array.from(iterators);
-  const num = promises.length;
-  const settledList = new Array(num);
-  let settledNum = 0;
+Promise.allSettled = function (iterators) {
+    const promises = Array.from(iterators);
+    const num = promises.length;
+    const settledList = new Array(num);
+    let settledNum = 0;
 
-  return new Promise(resolve => {
-    promises.forEach((promise, index) => {
-      Promise.resolve(promise)
-        .then(value => {
-          settledList[index] = formatSettledResult(true, value);
-          if (++settledNum === num) {
-            resolve(settledList);
-          }
-        })
-        .catch(error => {
-          settledList[index] = formatSettledResult(false, error);
-          if (++settledNum === num) {
-            resolve(settledList);
-          }
+    return new Promise(resolve => {
+        promises.forEach((promise, index) => {
+            Promise.resolve(promise)
+                .then(value => {
+                    settledList[index] = formatSettledResult(true, value);
+                    if (++settledNum === num) {
+                        resolve(settledList);
+                    }
+                })
+                .catch(error => {
+                    settledList[index] = formatSettledResult(false, error);
+                    if (++settledNum === num) {
+                        resolve(settledList);
+                    }
+                });
         });
     });
-  });
 };

@@ -3,8 +3,8 @@
 function myInstanceof(left, right) {
     if (typeof left !== 'object' || left === null) return false // 基础类型一律为 false
     let proto = Object.getPrototypeOf(left) // 获取对象的原型
-    while(true) {
-    	if (proto === null) return false
+    while (true) {
+        if (proto === null) return false
         if (proto === right.prototype) return true
         proto = Object.getPrototypeOf(proto)
     }

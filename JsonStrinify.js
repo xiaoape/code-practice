@@ -2,10 +2,10 @@
 // 不考虑循环引用
 if (!window.JSON) {
     window.JSON = {
-        parse: function(jsonStr) {
+        parse: function (jsonStr) {
             return eval('(' + jsonStr + ')');
         },
-        stringify: function(jsonObj) {
+        stringify: function (jsonObj) {
             var result = '',
                 curVal;
             if (jsonObj === null) {
