@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <title>Drag</title>
+    <style type="text/css">
+    	*{
+    		margin: 0px;
+    		padding:0px;
+    	}
+    	#con{
+    		width:100%;
+    		height:500px;
+    		border:1px dotted #999;
+    	}
+    	#img{
+    		margin-left: 10px;
+    		margin-top: 0px;
+    	}
+    </style>
+    </head>
+    <body>
+        <div id="con" ondragover="allowDrop(event);" ondrop="drop(event);">
+            <img id="img" src="https://p26-passport.byteacctimg.com/img/user-avatar/69cc7cc07438a8f704017484d58533cd~300x300.image" draggable="true" ondragstart="drag(event)"/>
+        </div>
+    </body>
+    <script type="text/javascript">
+        //保存位置的状态值
+        var pos={
+        	parent_top:0,
+        	parent_left:0,
+        	cur_top:0,
+        	cur_left:0
+        }
+        
+        function allowDrop(ev){				//ev是事件对象
+        	ev.preventDefault();			//取消事件已经关联的默认活动
+        }
+        
+        function drag(ev){
+        	//dataTransfer是一个媒介，将目标对象放入媒介
+        	//dataTransfer对象用来保存被拖动的数据，仅在拖动事件有效
+        	//这里将被拖动元素的id保存为名为Text的键值对中
+        	ev.dataTransfer.setData("Text",ev.target.id);
+        	//获取被拖动对象相对于上层元素顶边和左边位置	
+        	pos.parent_top=ev.target.offsetTop;
+        	pos.parent_left=ev.target.offsetLeft;
+        	pos.cur_top=ev.screenY;
+        	pos.cur_left=ev.screenX;
+        }
+        function drop(ev){
+        	var new_top,new_left;
+        	ev.preventDefault();
+            var data=ev.dataTransfer.getData("text");	
+        	var elem=document.getElementById(data);
+        	elem.style.marginLeft=pos.parent_left+ev.screenX-pos.cur_left+"px";
+        	elem.style.marginTop=pos.parent_top+ev.screenY-pos.cur_top+"px";
+        }
+    </script>
+</html>
