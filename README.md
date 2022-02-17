@@ -3,7 +3,7 @@
 该仓库用于快速提高代码手写能力，帮助面试者找到心仪的工作
 
 ## 如何使用
-[手写代码目录]()
+[手写代码目录](https://github.com/xiaoape/code-practice/blob/main/catalogue.md)
 
 ## 模板
 函数说明：可以是简短的几句话，也可以是一个链接
