@@ -1,3 +1,4 @@
+// 大数相加
 function add(a, b) {
     //取两个数字的最大长度
     let maxLength = Math.max(a.length, b.length);
@@ -18,3 +19,11 @@ function add(a, b) {
     }
     return sum;
 }
+
+
+// 测试数据
+let a = Math.pow(2,54)
+console.log(a); // 18014398509481984
+console.log(Number(18014398509481985)); // 18014398509481984
+console.log(a + 1); // 18014398509481984
+console.log(add(String(a),'1'));  // '18014398509481985'
