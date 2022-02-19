@@ -1,3 +1,4 @@
+// createObj实现
 const myCreate = function (obj) {
     function F() {}
     F.prototype = obj

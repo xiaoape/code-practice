@@ -1,3 +1,4 @@
+// lodash_get实现
 // _get(obj,'a.b.c')
 
 function _get(obj, path = '') {

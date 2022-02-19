@@ -1,3 +1,4 @@
+// 单例模式
 function proxy(func) {
     let instance;
     let handler = {

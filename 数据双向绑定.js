@@ -1,3 +1,4 @@
+// 双向绑定实现
 let obj = {}
 let input = document.getElementById('input')
 let span = document.getElementById('span')

@@ -1,3 +1,4 @@
+// 模板字符串
 function render(template, context) {
     return template.replace(/\{\{(.*?)\}\}/g, (match, key) => context[key]);
 }
@@ -7,3 +8,5 @@ const context = {
     age: "15"
 };
 console.log(render(template, context));
+
+// 参考链接：https://github.com/jawil/blog/issues/32

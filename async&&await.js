@@ -1,3 +1,4 @@
+// async await实现
 // async/await 应该就是个语法糖，是对 Promise + Generator 的更好的封装
 
 // async函数相比generator函数的改进：

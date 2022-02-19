@@ -1,3 +1,4 @@
+// 函数柯里化 curry
 function curry(fn, args) {
     // 获取传进来的函数的参数个数
     var length = fn.length;

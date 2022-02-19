@@ -1,3 +1,4 @@
+// 栈实现
 class Stack {
     constructor() {
         this.stack = []

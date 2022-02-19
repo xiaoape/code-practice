@@ -1,4 +1,4 @@
-
+// 数字千分位隔开
 // 数字有小数版本：
 let format = n => {
     let num = n.toString() // 转成字符串

@@ -1,3 +1,4 @@
+// 快速排序
 function sort(array) {
     checkArray(array);
     quickSort(array, 0, array.length - 1);

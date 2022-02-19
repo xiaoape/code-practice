@@ -1,4 +1,4 @@
-// 浅拷贝的实现;
+// 浅拷贝的实现
 
 function shallowCopy(object) {
     // 只拷贝对象

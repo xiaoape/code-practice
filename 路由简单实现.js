@@ -1,3 +1,4 @@
+// 简单路由实现
 // hash路由
 class Route {
     constructor() {

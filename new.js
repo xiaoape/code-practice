@@ -1,3 +1,4 @@
+// new关键字实现
 function New(func) {
     // 创建一个全新的对象
     var res = {};

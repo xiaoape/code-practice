@@ -1,3 +1,4 @@
+// 斐波那契
 const speed = function (fn, num) {
     console.time('time')
     let value = fn(num)

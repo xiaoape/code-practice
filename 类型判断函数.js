@@ -1,3 +1,4 @@
+// 类型判断
 function getType(value) {
     // 判断数据是 null 的情况
     if (value === null) {

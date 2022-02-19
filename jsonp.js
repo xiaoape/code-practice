@@ -1,3 +1,4 @@
+// jsonp实现
 // 动态的加载js文件
 function addScript(src) {
     const script = document.createElement('script');

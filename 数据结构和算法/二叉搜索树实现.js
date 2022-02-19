@@ -1,3 +1,4 @@
+// 二叉搜索树实现
 class Node {
     constructor(value) {
         this.value = value

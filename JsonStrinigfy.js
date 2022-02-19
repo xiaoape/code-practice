@@ -1,3 +1,4 @@
+// JSONStringify实现
 // 不带`replacer`和`space`参数的简化版本
 // 不考虑循环引用
 if (!window.JSON) {

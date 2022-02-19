@@ -1,3 +1,4 @@
+// promise实现
 var PENDING = 'pending'
 var FULFILLED = 'fulfilled'
 var REJECTED = 'rejected'

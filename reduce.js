@@ -1,3 +1,4 @@
+// reduce实现
 Array.prototype.selfReduce = function (fn, initialValue) {
     let arr = Array.prototype.slice.call(this)
     let res

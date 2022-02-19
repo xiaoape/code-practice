@@ -1,3 +1,4 @@
+// 工厂模式
 class Man {
     constructor(name) {
         this.name = name

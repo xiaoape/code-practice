@@ -1,4 +1,4 @@
-//私有变量(Proxy)
+//私有变量(Proxy)实现
 const proxy = function (obj) {
     return new Proxy(obj, {
         get(target, key) {

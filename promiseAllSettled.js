@@ -1,4 +1,4 @@
-// Promise.allSettled
+// Promise.allSettled实现
 const formatSettledResult = (success, value) =>
     success ?
     {

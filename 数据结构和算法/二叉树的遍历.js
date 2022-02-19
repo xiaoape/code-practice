@@ -1,3 +1,4 @@
+// 二叉树的遍历
 // 先序遍历
 var preListRec = []; //定义保存先序遍历结果的数组
 var preOrderRec = function (node) {

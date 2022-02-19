@@ -1,3 +1,4 @@
+// 队列实现
 // 单链队列
 class Queue {
     constructor() {

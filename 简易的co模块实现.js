@@ -1,3 +1,4 @@
+// 简易co模块实现
 //自执行generator函数
 
 const data = "{a:1,b:2}"

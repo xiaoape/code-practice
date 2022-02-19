@@ -1,3 +1,4 @@
+// flat实现
 // 使用reduce实现flat函数
 Object.prototype.copyFlat = function() {
     let arr = Array.prototype.slice.call(this)

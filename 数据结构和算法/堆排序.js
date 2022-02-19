@@ -1,3 +1,4 @@
+// 堆排序
 function heap(array) {
     checkArray(array);
     // 将最大值交换到首位

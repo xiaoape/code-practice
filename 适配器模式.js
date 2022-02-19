@@ -1,3 +1,4 @@
+// 适配器模式
 class Plug {
     getName() {
         return '港版插头'

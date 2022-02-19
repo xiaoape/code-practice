@@ -1,4 +1,4 @@
-// promise 封装实现：
+// promise 封装ajax
 function getJSON(url) {
     // 创建一个 promise 对象
     let promise = new Promise(function (resolve, reject) {

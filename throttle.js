@@ -1,3 +1,4 @@
+// 节流实现
 function throttle(fn) {
     let canRun = true; // 通过闭包保存一个标记
     return function () {

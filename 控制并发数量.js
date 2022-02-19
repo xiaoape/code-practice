@@ -1,3 +1,4 @@
+// 控制并发数量
 // 原理：使用一个队列维护所有的请求，然后使用async/await或者promise对请求进行控制
 // 当前面的请求完成就从队列中出队下一个请求
 class LimitResquest {

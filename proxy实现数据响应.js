@@ -1,3 +1,4 @@
+// proxy实现数据响应
 let onWatch = (obj, setBind, getLogger) => {
     let handler = {
         get(target, property, receiver) {

@@ -1,3 +1,4 @@
+// eventEmitter 实现
 class EventEmitter {
     constructor() {
         this.queue = {} //可触发多次的事件

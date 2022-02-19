@@ -1,3 +1,4 @@
+// promise实现异步加载
 let imageAsync = (url) => {
     return new Promise((resolve, reject) => {
         let img = new Image();

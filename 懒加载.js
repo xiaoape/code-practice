@@ -1,3 +1,4 @@
+// 懒加载实现
 // 当前可视区域的高度
 const viewHeight = window.innerHeight || document.documentElement.clientHeight
 // 获取所有图片标签

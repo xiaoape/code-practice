@@ -1,3 +1,4 @@
+// call实现
 Function.prototype.myCall1 = function (context) {
     // 判断当前调用call的是否是函数，不是的话就抛出错误
     if (typeof this !== 'function') {

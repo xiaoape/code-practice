@@ -1,4 +1,4 @@
-// Promise.all
+// Promise.all实现
 // all的原理，只能使用Promise，不能使用promise.resolve
 Promise.all = function (values) {
     return new Promise((resolve, reject) => {

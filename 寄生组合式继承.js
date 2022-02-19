@@ -1,3 +1,4 @@
+// 寄生组合式继承
 function Parent(value) {
     this.val = value
 }

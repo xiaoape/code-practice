@@ -1,3 +1,4 @@
+// 归并排序
 function sort(array) {
     checkArray(array);
     mergeSort(array, 0, array.length - 1);

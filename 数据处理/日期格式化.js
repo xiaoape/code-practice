@@ -1,3 +1,4 @@
+// 日期格式化
 const dateFormat = (dateInput, format)=>{
     var day = dateInput.getDate() 
     var month = dateInput.getMonth() + 1  

@@ -1,4 +1,4 @@
-    // 链表
+    // 链表实现
     function linkedList(){
         function Node(val){
             this.val= val

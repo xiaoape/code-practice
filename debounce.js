@@ -1,3 +1,4 @@
+// 防抖函数 debounce实现
 // func是用户传入需要防抖的函数
 // wait是等待时间
 const debounce = (func, wait = 50) => {

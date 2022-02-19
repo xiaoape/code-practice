@@ -1,3 +1,4 @@
+// bind实现
 Function.prototype.bind = function (context) {
     if (typeof this !== 'function') {
         throw new TypeError('Error');
