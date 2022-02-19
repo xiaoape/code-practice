@@ -1,5 +1,12 @@
-## 原生 API
+## 原生 API实现
 * [call实现](https://github.com/xiaoape/code-practice/blob/main/call.js)
 * [apply实现](https://github.com/xiaoape/code-practice/blob/main/apply.js)
 * [bind实现](https://github.com/xiaoape/code-practice/blob/main/bind.js)
 * [creatObj实现](https://github.com/xiaoape/code-practice/blob/main/createObj.js)
+* [repeat实现](https://github.com/xiaoape/code-practice/blob/main/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84repeat.js)
+* [setInterVal实现](https://github.com/xiaoape/code-practice/blob/main/setTimeout%E5%AE%9E%E7%8E%B0setInterval.js)
+* [reduce实现](https://github.com/xiaoape/code-practice/blob/main/reduce.js)
+* [new关健字实现](https://github.com/xiaoape/code-practice/blob/main/new.js)
+* [map实现](https://github.com/xiaoape/code-practice/blob/main/map.js)
+* [flat实现](https://github.com/xiaoape/code-practice/blob/main/flat.js)
+* [promise实现](https://github.com/xiaoape/code-practice/blob/main/promise.js)
