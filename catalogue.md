@@ -17,6 +17,8 @@
 * [JSON.stringify实现](https://github.com/xiaoape/code-practice/blob/main/JsonStrinigfy.js)
 * [async&&await实现]()
 * [instanceOf]()
+* [push实现]()
+* [pop实现]()
 
 ## 设计模式
 * [单例模式](https://github.com/xiaoape/code-practice/blob/main/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F.js)
