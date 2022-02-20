@@ -32,7 +32,33 @@
 ## 高频代码手写考点
 * [防抖函数](https://github.com/xiaoape/code-practice/blob/main/debounce.js)
 * [节流函数](https://github.com/xiaoape/code-practice/blob/main/throttle.js)
-
+* EventEmitter
+* ajax.js
+* curry.js
+* deepClone.
+* importExport
+* lodash_get
+* promise实现异步加载
+* proxy实现数据响应
+* 使用promise封装ajax请求
+* 偏函数实现
+* 判断对象是否存在循环引用
+* 图片拖拽.html
+* 大数相加
+* 寄生组合式继承
+* 懒加载
+* 控制并发数量
+* 数据双向绑定
+* 斐波那契数列
+* 洗牌算法
+* 浅拷贝
+* 私有变量的实现
+* 简单模板字符串替换
+* 简易的co模块实现
+* 类型判断函数
+* 路由简单实现
+* 迭代器实现
+* 遍历嵌套对象
 ## 数据结构和算法
 * [链表实现]()
 
