@@ -10,3 +10,16 @@
 * [map实现](https://github.com/xiaoape/code-practice/blob/main/map.js)
 * [flat实现](https://github.com/xiaoape/code-practice/blob/main/flat.js)
 * [promise实现](https://github.com/xiaoape/code-practice/blob/main/promise.js)
+* [promiseAll实现](https://github.com/xiaoape/code-practice/blob/main/promiseAll.js)
+* [promiseSettled实现](https://github.com/xiaoape/code-practice/blob/main/promiseAllSettled.js)
+* [promiseCatch实现](https://github.com/xiaoape/code-practice/blob/main/promiseCatch.js)
+* [promiseRace实现](https://github.com/xiaoape/code-practice/blob/main/promiseRace.js)
+* [JSON.stringify实现](https://github.com/xiaoape/code-practice/blob/main/JsonStrinigfy.js)
+
+## 设计模式
+* [单例模式](https://github.com/xiaoape/code-practice/blob/main/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F.js)
+* [工厂模式](https://github.com/xiaoape/code-practice/blob/main/%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F.js)
+* [适配器模式](https://github.com/xiaoape/code-practice/blob/main/%E9%80%82%E9%85%8D%E5%99%A8%E6%A8%A1%E5%BC%8F.js)
+## 高频代码手写考点
+* [防抖函数](https://github.com/xiaoape/code-practice/blob/main/debounce.js)
+* [节流函数](https://github.com/xiaoape/code-practice/blob/main/throttle.js)
