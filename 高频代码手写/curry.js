@@ -21,19 +21,19 @@ function multiFn(a, b, c) {
 
 var multi = curry(multiFn);
 
-multi(2)(5)(4);
-multi(2, 5, 4);
-multi(2)(5, 4);
-multi(2, 5)(4);
+console.log(multi(2)(5)(4)); // 40
+console.log(multi(2, 5, 4)); // 40
+console.log(multi(2)(5, 4)); // 40
+console.log(multi(2, 5)(4)); // 40
 
 // 使用ES6方式
-const curry = (fn, arr = []) => (...args) => (
+const curryTwo = (fn, arr = []) => (...args) => (
     arg => arg.length === fn.length ?
     fn(...arg) :
-    curry(fn, arg)
+    curryTwo(fn, arg)
 )([...arr, ...args])
 
-let curryTest = curry((a, b, c, d) => a + b + c + d)
-curryTest(1, 2, 3)(4)
-curryTest(1, 2)(4)(3)
-curryTest(1, 2)(3, 4)
+let curryTest = curryTwo((a, b, c, d) => a + b + c + d)
+console.log(curryTest(1, 2, 3)(4)) // 10
+console.log(curryTest(1, 2)(4)(3)) // 10
+console.log(curryTest(1, 2)(3, 4)) // 10

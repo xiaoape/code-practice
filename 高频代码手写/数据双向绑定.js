@@ -16,6 +16,6 @@ Object.defineProperty(obj, 'text', {
   }
 })
 // 输入监听
-input.addEventListener('keyup', function(e) {
+input.addEventListener('keyup', function (e) {
   obj.text = e.target.value
 })
