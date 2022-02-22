@@ -22,3 +22,24 @@ function lazyLoad() {
 }
 // 监听Scroll 事件
 window.addEventListener('scroll', lazyload, false)
+
+// 使用IntersectionObserver实现懒加载
+
+const io = new IntersectionObserver(callback);
+let imgs = document.querySelectorAll('[data-src]');
+
+function callback(entries) {
+    entries.forEach((item) => {
+        if (item.isIntersecting) {
+            item.target.src = item.target.dataset.src
+            io.unobserve(item.target)
+        }
+
+    })
+}
+
+imgs.forEach((item) => {
+    io.observe(item)
+})
+
+// 链接：https://juejin.cn/post/6844903560434417677
