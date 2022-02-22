@@ -1,5 +1,37 @@
 // bind实现
-Function.prototype.bind = function (context) {
+Function.prototype.myBind = function (context) {
+    if (typeof this !== 'function') {
+        throw new TypeError('Error')
+    }
+    const _this = this
+    const args = [...arguments].slice(1)
+    // 返回一个函数
+    return function F() {
+        // 因为返回了一个函数，我们可以 new F()，所以需要判断
+        if (this instanceof F) {
+            return new _this(...args, ...arguments)
+        }
+        return _this.apply(context, args.concat(...arguments))
+    }
+}
+// 这个地方不能使用module作为变量，不然在nodejs环境下会报错
+const moduleOne = {
+    x: 42,
+    getX: function () {
+        return this.x;
+    }
+};
+const unboundGetX = moduleOne.getX;
+console.log(unboundGetX());  // undefined
+
+const boundGetX = unboundGetX.myBind(moduleOne);
+console.log(boundGetX()); // 42
+let obj1 = new unboundGetX(moduleOne)
+console.log(obj1 instanceof unboundGetX) // true
+console.log(unboundGetX.myBind()()) // undefined
+console.log(obj1()) // obj1 is not a function
+
+Function.prototype.bindTwo = function (context) {
     if (typeof this !== 'function') {
         throw new TypeError('Error');
     }
