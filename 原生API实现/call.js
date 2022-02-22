@@ -9,7 +9,7 @@ Function.prototype.myCall1 = function (context) {
     // 创造一个独一无二的字符串
     let fn = Symbol(context)
     // 给context添加一个方法，该方法保存着调用call的函数
-    context.fn = this
+    context[fn] = this
     // 处理参数 去除第一个参数context，其它参数传入fn函数，返回一个新的参数数组
     let arg = [...arguments].slice(1)
     // 执行fn函数，也就是执行调用call的函数
@@ -19,3 +19,15 @@ Function.prototype.myCall1 = function (context) {
     // 返回函数执行的结果
     return result
 }
+
+const obj = {
+    a: 3,
+    b: 'c'
+}
+
+function test() {
+    console.log(this.a)
+}
+
+test.call(obj) // 3
+test() // undefined
