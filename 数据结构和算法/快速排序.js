@@ -11,7 +11,7 @@
 - 所有小于"基准"的元素，都移到"基准"的左边；所有大于"基准"的元素，都移到"基准"的右边。
 - 对"基准"左边和右边的两个子集，不断重复第一步和第二步，直到所有子集只剩下一个元素为止。 */
 
-// 方法一
+// 方法一(面试推荐)
 function quickSort(arr) {
     if (arr.length <= 1) {
         return arr;
@@ -31,7 +31,7 @@ function quickSort(arr) {
 
     return quickSort(left).concat([base], quickSort(right));
 }
-console.log(quickSort([543,234,12,757,85,32,76,443]))
+console.log(quickSort([543, 234, 12, 757, 85, 32, 76, 443]))
 
 // 方法二
 function quickSortTwo(array, left, right) {
@@ -54,7 +54,7 @@ function quickSortTwo(array, left, right) {
     }
     return array;
 }
-console.log(quickSortTwo([543,234,12,757,85,32,76,443]))
+console.log(quickSortTwo([543, 234, 12, 757, 85, 32, 76, 443]))
 
 // 方法三
 function checkArray(array) {
@@ -105,4 +105,4 @@ function part(array, left, right) {
     swap(array, right, more);
     return [less, more];
 }
-console.log(sort([543,234,12,757,85,32,76,443]))
+console.log(sort([543, 234, 12, 757, 85, 32, 76, 443]))

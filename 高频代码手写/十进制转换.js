@@ -1,4 +1,5 @@
 // 给定10进制数，转换成[2~16]进制区间数
+// 方法一
 function Conver(number, base = 2) {
     let rem, res = '',
         digits = '0123456789ABCDEF',
@@ -22,3 +23,10 @@ console.log(Conver(10,2)) // 1010
 console.log(Conver(10,3)) // 101
 console.log(Conver(14,5)) // 24
 console.log(Conver(10,10)) // 10
+
+// 方法二
+function ConverTwo(num, base) {
+    return num.toString(base)
+}
+
+console.log(ConverTwo(10,2)) // 1010
