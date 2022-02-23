@@ -1,4 +1,5 @@
-// 链表是否有环
+// 单链表是否有环
+// 标志法
 /**
  * @param {ListNode} head
  * @return {boolean}
@@ -17,4 +18,29 @@ const hasCycle = function(head) {
         }
     }
     return false;
+};
+
+// 利用 JSON.stringify() 不能序列化含有循环引用的结构
+var hasCycle = function(head) {
+    try{
+        JSON.stringify(head);
+        return false;
+    }
+    catch(err){
+        return true;
+    }
+};
+
+// 快慢指针
+var hasCycle = function(head) {
+    if(!head || !head.next) {
+        return false
+    }
+    let fast = head.next.next, slow = head
+    while(fast !== slow) {
+        if(!fast || !fast.next) return false
+        fast = fast.next.next
+        slow = slow.next
+    }
+    return true
 };

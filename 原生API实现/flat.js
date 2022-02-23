@@ -3,7 +3,6 @@
 Object.prototype.copyFlat = function() {
     let arr = Array.prototype.slice.call(this)
     return arr.reduce((res,value) => {
-        console.log(Object.prototype.toString.call(value))
         if(Object.prototype.toString.call(value)==='[object Array]') {
             return res.concat(value.copyFlat())
         } else {
@@ -35,6 +34,6 @@ Array.prototype.selfFlat || (Object.defineProperty(Array.prototype, 'selfFlat', 
     configurable: true,
     writable: true
 }))
-let arr = [1, 2, [3, 4, [5, 6, 7, 8], 9], 10, 11, 12, [13, 14]]
+let arr1 = [1, 2, [3, 4, [5, 6, 7, 8], 9], 10, 11, 12, [13, 14]]
 
-console.log(arr.selfFlat(Infinity))
+console.log(arr1.selfFlat(Infinity)) //  [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]

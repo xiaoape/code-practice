@@ -10,6 +10,14 @@
 // 3. 每次遍历都能找出剩余元素中的最小值并放在已排序部分的最后
 
 // > 并不是倒着的冒泡排序。冒泡排序是比较**相邻的两个元素**
+
+
+function swap(array, left, right) {
+  let rightValue = array[right]
+  array[right] = array[left]
+  array[left] = rightValue
+}
+
 function selection(array) {
   for (let i = 0; i < array.length - 1; i++) {
     let minIndex = i;
@@ -35,3 +43,8 @@ function choise(arr) {
   return arr
 }
 // 选择排序是每次遍历都找到当前位置最值的下标，通过下标进行交换
+
+let arr = [2645, 32, 23, 5, 6, 4, 6344342, 2323]
+console.log(selection(arr))
+
+ //  https://juejin.im/post/5c9cf808f265da611846c015#heading-3
