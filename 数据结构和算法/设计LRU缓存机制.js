@@ -86,3 +86,30 @@ class LRUCache {
 
 
 // 参考链接：https://leetcode-cn.com/problems/lru-cache/
+
+// 方法二：使用map结构实现
+class LRU {
+    constructor(max) {
+        this.max = max
+        this.cache = new Map()
+    }
+    get(key) {
+        const { cache } = this
+        const value = cache.get(key)
+        if (!value) return -1
+        cache.delete(key)
+        cache.set(key, value)
+        return value
+    }
+    set(key, value) {
+        const { cache, max } = this
+        if (cache.has(key)) {
+            cache.delete(key)
+        }
+        if (cache.size === max) {
+            // keys() 返回一个引用的 Iterator 对象。它包含按照顺序插入 Map 对象中每个元素的key值。
+            cache.delete(cache.keys().next().value)
+        }
+        cache.set(key, value)
+    }
+}
