@@ -1,4 +1,4 @@
-// 判断兑现是否存在循环引用
+// 判断对象是否存在循环引用
 const isCycleObject = (obj, parent) => {
     const parentArr = parent || [obj];
     for (let i in obj) {

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- 当触发子元素事件时，会向上冒泡，找到父元素。
+此时this指向的是绑定事件的父元素，而target指向的是触发事件的子元素。
+在实践中，我们常常用target来找到当前事件源。但是当我们想知道当前事件源是第几个子元素时，
+我们就需要创建自定义属性，来对每一个子元素进行角标标记。通过target.index查询角标，即可知道当前位置。 -->
+
+<body>
+    <ul>
+        <li>我是Li</li>
+        <li>我是Li</li>
+        <li>我是Li</li>
+        <li>我是Li</li>
+        <li>我是Li</li>
+    </ul>
+
+    <script>
+        var lis = document.querySelectorAll('li')
+        var ul = document.querySelector('ul')
+
+        //给每一个li绑定角标
+        for (var i = 0; i < lis.length; i++) {
+            lis[i].index = i + 1
+        }
+
+        ul.onclick = function (e) {
+            var target = e.target
+            console.log(this); //ul
+            console.log(target); //li
+            console.log(target.index); //Li的顺序，从0开始
+            if (target.tagName == 'LI') {
+                alert(`点击的是第${target.index}个li`)
+            }
+        }
+    </script>
+
+</body>
+
+</html>
