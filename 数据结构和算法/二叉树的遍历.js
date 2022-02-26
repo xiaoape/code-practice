@@ -11,6 +11,17 @@ var preOrderRec = function (node) {
 preOrderRec(tree);
 console.log(preListRec);
 
+// 将遍历结果当作数组作为参数版本
+function preDfs(root, result = []) {
+    if (root) {
+        result.push(root.val);
+        dfs(root.left, result);
+        dfs(root.right, result);
+        return result
+    }
+}
+console.log(preDfs(tree, []))
+
 // 中序遍历
 var inListRec = []; //定义保存中序遍历结果的数组
 var inOrderRec = function (node) {
