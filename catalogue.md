@@ -20,7 +20,7 @@
 * [push实现]()
 * [pop实现]()
 * Object.is实现
-* 正则实现trim
+* 实现trim函数
   
 
 ## 设计模式
