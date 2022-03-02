@@ -20,6 +20,8 @@
 * [push实现]()
 * [pop实现]()
 * Object.is实现
+* 正则实现trim
+  
 
 ## 设计模式
 * [单例模式](https://github.com/xiaoape/code-practice/blob/main/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F.js)
@@ -32,6 +34,11 @@
 * [数字千分位隔开]()
 * [数组乱序输出]()
 * [日期格式化]()
+* 列表转化成树形结构
+* 树形结构转化成列表
+* 大数相加
+* 去掉字符串里的空格
+* 数组去重
 ## 高频代码手写考点
 * [防抖函数](https://github.com/xiaoape/code-practice/blob/main/debounce.js)
 * [节流函数](https://github.com/xiaoape/code-practice/blob/main/throttle.js)
@@ -45,10 +52,8 @@
 * proxy实现数据响应
 * 使用promise封装ajax请求
 * 偏函数实现
-* 数组去重
 * 判断对象是否存在循环引用
 * 图片拖拽.html
-* 大数相加
 * 寄生组合式继承
 * 懒加载
 * 控制并发数量
@@ -67,7 +72,6 @@
 * stroage封装
 * maxRequests实现
 * 事件委托
-* 正则实现trim
 * 生成随机的不重复数组
 * 生成长度固定的随机字符串
 * compose函数实现
@@ -84,8 +88,6 @@
 * 冒泡排序
 * 堆排序
 * 定位环的起点
-* 列表转化成树形结构
-* 树形结构转化成列表
 * 希尔排序
 * 归并排序
 * 快速排序
