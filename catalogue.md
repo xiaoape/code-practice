@@ -39,6 +39,7 @@
 * 大数相加
 * 去掉字符串里的空格
 * 数组去重
+* 正则数据验证
 ## 高频代码手写考点
 * [防抖函数](https://github.com/xiaoape/code-practice/blob/main/debounce.js)
 * [节流函数](https://github.com/xiaoape/code-practice/blob/main/throttle.js)
@@ -77,7 +78,8 @@
 * compose函数实现
 * 版本号排序
 * 时间分片解决大量数据渲染
-
+* 实现函数的缓存
+  
 ## 高频CSS手写
 
 ## 数据结构和算法
