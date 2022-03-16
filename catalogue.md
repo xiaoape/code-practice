@@ -40,6 +40,7 @@
 * 去掉字符串里的空格
 * 数组去重
 * 正则数据验证
+* 优雅的处理try catch
 ## 高频代码手写考点
 * [防抖函数](https://github.com/xiaoape/code-practice/blob/main/debounce.js)
 * [节流函数](https://github.com/xiaoape/code-practice/blob/main/throttle.js)
