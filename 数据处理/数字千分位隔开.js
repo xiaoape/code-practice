@@ -20,6 +20,7 @@ let format = n => {
     }
 }
 console.log(format(12323.33)) // '12,323.33'
+// console.log(format(0.13)) // 报错 Cannot read properties of null (reading 'join')
 
 
 // 数字无小数版本：
@@ -38,3 +39,12 @@ let format2 = n => {
     }
 }
 console.log(format2(1232323)) // '1,232,323'
+
+// 方式二： 使用toLocalString()方法
+let a = 12345600789
+console.log(a.toLocaleString()) // '12,345,600,789'
+
+let b = 123456.00789
+console.log(b.toLocaleString()) // '123,456.008'  可以看到当前是默认三位小数有效
+
+console.log(b.toLocaleString('zh', { minimumFractionDigits: 6 })); // 123,456.007890
