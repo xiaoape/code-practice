@@ -1,24 +1,24 @@
 // 自定义的useDebounce
 import {
     useEffect,
-    useRef
+    useRef,
+    useCallback
 } from 'react'
 
-const useDebounce = (fn, ms = 30, deps = []) => {
-    let timeout = useRef()
-    useEffect(() => {
-        if (timeout.current) clearTimeout(timeout.current)
-        timeout.current = setTimeout(() => {
-            fn()
-        }, ms)
-    }, deps)
+function useDebounce(fn, delay, dep = []) {
+    const { current } = useRef({ fn, timer: null });
+    useEffect(function () {
+        current.fn = fn;
+    }, [fn]);
 
-    const cancel = () => {
-        clearTimeout(timeout.current)
-        timeout = null
-    }
-
-    return [cancel]
+    return useCallback(function f(...args) {
+        if (current.timer) {
+            clearTimeout(current.timer);
+        }
+        current.timer = setTimeout(() => {
+            current.fn.call(this, ...args);
+        }, delay);
+    }, dep)
 }
 
 export default useDebounce

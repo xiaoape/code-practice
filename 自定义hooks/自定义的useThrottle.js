@@ -2,25 +2,23 @@
 import {
     useEffect,
     useRef,
-    useState
+    useCallback
 } from 'react'
 
-const useThrottle = (fn, ms = 30, deps = []) => {
-    let previous = useRef(0)
-    let [time, setTime] = useState(ms)
-    useEffect(() => {
-        let now = Date.now();
-        if (now - previous.current > time) {
-            fn();
-            previous.current = now;
+function useThrottle(fn, delay, dep = []) {
+    const { current } = useRef({ fn, timer: null });
+    useEffect(function () {
+        current.fn = fn;
+    }, [fn]);
+
+    return useCallback(function f(...args) {
+        if (!current.timer) {
+            current.timer = setTimeout(() => {
+                delete current.timer;
+            }, delay);
+            current.fn.call(this, ...args);
         }
-    }, deps)
-
-    const cancel = () => {
-        setTime(0)
-    }
-
-    return [cancel]
+    }, dep);
 }
 
 export default useThrottle
