@@ -13,15 +13,24 @@ async function errorCaptured(asyncFunc) {
 }
 
 // 测试
-const test = async (a, b) => {
-    let result = await a + b
-    // throw new TypeError('Error')
-    return result
-}
+// const test = async (a, b) => {
+//     let result = await a + b
+//     // throw new TypeError('Error')
+//     return result
+// }
 
-async function run() {
-    let [err, res] = await errorCaptured(test, 2,3)
-    if(err) console.log(err, 'error')
-    console.log(res, 'resss')
+// async function run() {
+//     let [err, res] = await errorCaptured(test, 2,3)
+//     if(err) console.log(err, 'error')
+//     console.log(res, 'resss')
+// }
+// run()
+
+// 测试二
+
+async function run2() {
+    let str = '{"a":1}'
+    const [err2, res] = await errorCaptured(JSON.parse, str)
+    console.log(res, 'res--')
 }
-run()
+run2()
