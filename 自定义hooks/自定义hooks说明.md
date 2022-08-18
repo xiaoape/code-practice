@@ -11,4 +11,9 @@
 * useScroll
 * usePrevious
 
-社区已经有了自定义hooks的npm包，详细见：https://ahooks.js.org/zh-CN/
+## 相关资料
+
+社区已经有了自定义hooks的npm包，详细见：
+
+1. https://ahooks.js.org/zh-CN/
+2. https://github.com/jaredLunde/react-hook
