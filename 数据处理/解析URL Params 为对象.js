@@ -53,3 +53,18 @@ function parseParam2(url) {
     return paramsObj;
 }
 console.log(parseParam2(url))
+
+// 使用URLSearchParams
+function parse() {
+    let serach = window.location.search;
+    let params = new URLSearchParams(serach),
+      queryObj = {};
+    for (let [k, v] of params.entries()) {
+      if (queryObj[k] !== undefined) {
+        queryObj[k] = [].concat(queryObj[k], v);
+      } else {
+        queryObj[k] = v;
+      }
+    }
+    return queryObj;
+  }
