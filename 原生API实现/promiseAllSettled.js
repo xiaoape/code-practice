@@ -34,3 +34,13 @@ Promise.allSettled = function (iterators) {
         });
     });
 };
+
+
+// 第二种写法
+const myPromiseSettled = (items) => {
+    const onResolved = (value) => ({ status: "fulfilled", value });
+    const onRejected = (reason) => ({ status: "rejected", reason });
+    return Promise.all(
+      items.map((item) => Promise.resolve(item).then(onResolved, onRejected))
+    );
+  };
