@@ -48,3 +48,12 @@ let b = 123456.00789
 console.log(b.toLocaleString()) // '123,456.008'  可以看到当前是默认三位小数有效
 
 console.log(b.toLocaleString('zh', { minimumFractionDigits: 6 })); // 123,456.007890
+
+// 使用toLocalString方法，如果是整数的话，
+// 我们希望不需要那么多的精度，可以通过控制minimumFractionDigits属性做到
+
+let c = 234567
+console.log(c.toLocaleString('zh', { 
+    minimumFractionDigits: c % 1 === 0 ? 0 : 4 
+})); // 234,567
+
