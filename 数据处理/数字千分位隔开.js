@@ -52,10 +52,29 @@ console.log(b.toLocaleString('zh', { minimumFractionDigits: 6 })); // 123,456.00
 // 使用toLocalString方法，如果是整数的话，
 // 我们希望不需要那么多的精度，可以通过控制minimumFractionDigits属性做到
 
-// 再智能一点的话，如果这个数字不是整数的话，计算出当前小数点有多少位，然后动态的传递精度
 
 let c = 234567
 console.log(c.toLocaleString('zh', { 
     minimumFractionDigits: c % 1 === 0 ? 0 : 4 
 })); // 234,567
 
+// 再智能一点的话，如果这个数字不是整数的话，计算出当前小数点有多少位，然后动态的传递精度
+const numLocalFormate = (num) => {
+    let digits = 0
+    if (num % 1 !== 0) {
+      let numStr = String(num)
+      let decimal = numStr.split('.')[1]
+      digits = decimal.length || 0
+      return num.toLocaleString('en-US', {
+        minimumFractionDigits: digits,
+      })
+    }
+    return num.toLocaleString('en-US', {
+      minimumFractionDigits: digits,
+    })
+  }
+
+console.log(numLocalFormate(1)) // 1
+console.log(numLocalFormate(12532)) // 12,532
+console.log(numLocalFormate(125234.1245)) // 125,234.1245
+console.log(numLocalFormate('125234.1245')) // 125234.1245
