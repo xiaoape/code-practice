@@ -1,4 +1,4 @@
-// 深克隆 deepClone
+// 深克隆 深拷贝 deepClone
 function clone(target, map = new Map()) {
     if (typeof target === 'object') {
         let cloneTarget = Array.isArray(target) ? [] : {};
