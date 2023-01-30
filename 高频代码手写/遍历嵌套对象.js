@@ -21,8 +21,8 @@ const getData2 = (obj, str) => {
     })
     return obj;
 }
-console.log(getData(obj, str)); // 666
-console.log(getData2(obj, str)); // 666
+// console.log(getData(obj, str)); // 666
+// console.log(getData2(obj, str)); // 666
 
 // 自测
 const test = (obj, str) => {
@@ -36,4 +36,16 @@ const test = (obj, str) => {
         }
     }
 }
-console.log(test(obj, str)) // 666
+// console.log(test(obj, str)) // 666
+
+
+const handleWrite = (obj, str) => {
+    const strArr = str.split('.')
+    let result = obj
+    for(let i = 0;i<strArr.length; i++) {
+        result = result[strArr[i]] 
+    }
+    return result
+}
+
+console.log(handleWrite(obj, 'a.b.c')) // 666
