@@ -21,7 +21,7 @@ const hasCycle = function(head) {
 };
 
 // 利用 JSON.stringify() 不能序列化含有循环引用的结构
-var hasCycle = function(head) {
+var hasCycle2 = function(head) {
     try{
         JSON.stringify(head);
         return false;
@@ -32,7 +32,7 @@ var hasCycle = function(head) {
 };
 
 // 快慢指针
-var hasCycle = function(head) {
+var hasCycle3 = function(head) {
     if(!head || !head.next) {
         return false
     }
