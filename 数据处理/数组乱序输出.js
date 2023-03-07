@@ -26,3 +26,9 @@ while (length) {
   arr[randomIndex] = temp;
 }
 console.log(arr)
+
+// 随机打乱数组
+arr.sort(function() {
+    return (0.5-Math.random());
+});
+console.log(arr);
