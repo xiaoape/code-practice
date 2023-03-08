@@ -1,4 +1,5 @@
 // 节流实现
+// 高频事件触发，但在n秒内只会执行一次，所以节流会稀释函数的执行频率
 function throttle(fn) {
     let canRun = true; // 通过闭包保存一个标记
     return function () {

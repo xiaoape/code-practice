@@ -37,3 +37,5 @@ let iterator = container.getIterator()
 while(iterator.hasNext()){
     console.log(iterator.next())
 }
+
+// 同目录中迭代器实现

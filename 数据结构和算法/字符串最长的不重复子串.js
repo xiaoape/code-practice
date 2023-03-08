@@ -27,7 +27,7 @@ const lengthOfLongestSubstring = function (s) {
 // 如果没有遇到重复的字符就移动右指针，
 // 如果遇到了重复的字符就将左指针移动到滑动窗口中重复字符的右边（相当于是删掉了前面没用的字符）
 // 知道右指针遍历完，此时记录的max就是最长不重复子串
-var lengthOfLongestSubstring = function(s) {
+var lengthOfLongestSubstring2 = function(s) {
     // 滑动窗口
     let left = 0;
     let max = 0;
