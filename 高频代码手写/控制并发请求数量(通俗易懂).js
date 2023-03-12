@@ -18,9 +18,13 @@ async function fetchData() {
   const results = [];
 
   const fetchPromises = urls.map(async (url) => {
+    // 因为getData函数是一个async函数，async函数默认会返回一个promise的对象
     const result = await getData(url);
     results.push(result);
   });
+
+  // fetchPromises里面是等待执行的promise
+  console.log(fetchPromises, 'fetchPromises')
 
   // 将promise数组分割成多个小数组，每个小数组包含最多maxConcurrentRequests个promise
   const chunks = [];
