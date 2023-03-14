@@ -2,7 +2,6 @@
 // 以下是策略模式的使用场景：
 
 // 1.当有多个算法可以完成同一件任务，并且客户端需要根据特定条件来选择其中一种算法时。
-
 // 2.如果一个对象具有许多行为，而且必须经常更改这些行为之一，则可以使用策略设计模式。
 // 定义一个策略对象
 const strategies = {
@@ -36,3 +35,19 @@ console.log(calculator.execute(5, 2)); //7
 //执行乘法策略
 calculator.setStrategy(strategies.multiply);
 console.log(calculator.execute(5, 2)); //10
+
+
+// 策略可以是object键值对，Map键值对，value可以是字符串，函数等等任何处理程序
+const levelStrategy = new Map([
+    [10, '青铜'],
+    [20, '白银'],
+    [30, '黄金'],
+    [40, '铂金'],
+    [50, '钻石'],
+    ['other', '星耀以上']
+]);
+
+//环境
+const getMyLevel = starNum => levelStrategy.get(starNum);
+//使用
+const myLevel = getMyLevel(50); // '钻石'
