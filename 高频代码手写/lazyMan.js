@@ -34,6 +34,7 @@ class _LazyMan {
         }, 0);
     }
     next() {
+        console.log(this.tasks, 'task')
         const task = this.tasks.shift(); // 取第一个任务执行
         task && task();
     }
@@ -71,3 +72,11 @@ class _LazyMan {
 function LazyMan(name) {
     return new _LazyMan(name);
 }
+LazyMan('Hank').sleep(1).eat('dinner')
+// (3) [ƒ, ƒ, ƒ] task
+// Hi! This is Hank
+// (2) [ƒ, ƒ] task
+// Wake up after 1
+// (1) [ƒ] task
+// Eat dinner
+// (0) [] task
