@@ -93,3 +93,22 @@ function fibonacci_DP(n) {
 }
 
 speed(fibonacci_DP, 35)
+
+// 利用数组的方式实现
+
+var climbStairs = function(n) {
+    let result = [1,2];
+    for (let i = 2; i < n; i++) {
+        result.push(result[i-1] + result[i-2]);
+    }
+    return result[n-1];
+};
+
+// 使用数组解构
+var climbStairs = function(n) {
+    let a = b = 1;
+    for (let i = 0; i < n; i++) {
+        [a, b] = [b, a + b];
+    }
+    return a;
+};
