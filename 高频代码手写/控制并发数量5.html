@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class PLimit {
+            constructor(limit) {
+                this.limit = limit; // 设置并发请求的数量限制
+                this.queue = []; // 存储等待执行的请求
+                this.activeCount = 0; // 当前活动请求的数量
+            }
+
+            async _next() {
+                if (this.queue.length === 0) return; // 没有待处理请求
+
+                if (this.activeCount < this.limit) {
+                    const task = this.queue.shift(); // 取出下一个任务
+                    if (task) {
+                        this.activeCount++;
+                        try {
+                            console.log(task, 'task')
+                            await task.fn();
+                        } finally {
+                            this.activeCount--;
+                            this._next(); // 执行下一个任务
+                        }
+                    }
+                }
+            }
+
+            async add(fn) {
+                return new Promise((resolve) => {
+                    this.queue.push({ fn, resolve });
+                    this._next();
+                });
+            }
+        }
+
+        // 示例用法
+        const limit = new PLimit(3); // 设置并发请求的数量限制为3
+
+        async function fetchData(url) {
+            const response = await fetch(url);
+            const data = await response.json();
+            return data;
+        }
+        // 忽略接口跨域
+        (async () => {
+            const urls = [
+                'https://test.app.composablelabs.link/api/v1/games/chain',
+                'https://test.app.composablelabs.link/api/v1/games/chain',
+                'https://test.app.composablelabs.link/api/v1/games/chain',
+                'https://test.app.composablelabs.link/api/v1/games/chain',
+                'https://test.app.composablelabs.link/api/v1/games/chain',
+                'https://test.app.composablelabs.link/api/v1/games/chain',
+                'https://test.app.composablelabs.link/api/v1/games/chain',
+                'https://test.app.composablelabs.link/api/v1/games/chain',
+                'https://test.app.composablelabs.link/api/v1/games/chain',
+                'https://test.app.composablelabs.link/api/v1/games/chain',
+            ];
+            // 不使用并发
+            // const promises = urls.map(async (url) => {
+            //     return await fetchData(url);
+            // }
+            // 使用并发
+            const promises = urls.map((url) =>
+                limit.add(async () => {
+                    const data = await fetchData(url);
+                    console.log(`Data from ${url}:`, data);
+                })
+            );
+
+            console.log(promises, 'promises')
+            await Promise.all(promises);
+        })();
+
+    </script>
+</body>
+
+</html>
