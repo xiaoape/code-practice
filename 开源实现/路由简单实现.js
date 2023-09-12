@@ -110,3 +110,5 @@ router2.route('/contact', () => {
 
 // 跳转到/about页面
 history.pushState(null, '', '/about');
+
+// 数据驱动路由参考：https://juejin.cn/post/6844903615283363848
