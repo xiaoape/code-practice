@@ -228,4 +228,6 @@ function execRecursively(fn, subject, _refs = new WeakSet()) {
   
   foo.bar.baz = foo; // 循环引用！
   execRecursively((obj) => console.log(obj), foo);
+
+  // 参考链接：https://juejin.cn/post/6844903929705136141?searchId=20230918143336712D6138242F92E40F79
   
