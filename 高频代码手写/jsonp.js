@@ -1,18 +1,58 @@
 // jsonp实现
-// 动态的加载js文件
-function addScript(src) {
-  const script = document.createElement('script');
-  script.src = src;
-  script.type = "text/javascript";
-  document.body.appendChild(script);
+// 调用需要服务端的支持
+
+// 实现方式一
+function stringify(data) {
+  const pairs = Object.entries(data)
+  const qs = pairs.map(([k, v]) => {
+    let noValue = false
+    if (v === null || v === undefined || typeof v === 'object') {
+      noValue = true
+    }
+    return `${encodeURIComponent(k)}=${noValue ? '' : encodeURIComponent(v)}`
+  }).join('&')
+  return qs
 }
-addScript("http://xxx.xxx.com/xxx.js?callback=handleRes");
-// 设置一个全局的callback函数来接收回调结果
-function handleRes(res) {
-  console.log(res);
+
+function jsonp({ url, onData, params }) {
+  const script = document.createElement('script')
+
+  // 一、为了避免全局污染，使用一个随机函数名
+  const cbFnName = `JSONP_PADDING_${Math.random().toString().slice(2)}`
+  // 二、默认 callback 函数为 cbFnName
+  script.src = `${url}?${stringify({ callback: cbFnName, ...params })}`
+  // 三、使用 onData 作为 cbFnName 回调函数，接收数据
+  window[cbFnName] = onData;
+
+  document.body.appendChild(script)
 }
-// 接口返回的数据格式
-handleRes({
-  a: 1,
-  b: 2
-});
+
+// 使用promise包裹
+const jsonp = ({ url, params, callbackName }) => {
+  const generateUrl = () => {
+    let dataSrc = ''
+    for (let key in params) {
+      if (params.hasOwnProperty(key)) {
+        dataSrc += `${key}=${params[key]}&`
+      }
+    }
+    dataSrc += `callback=${callbackName}`
+    return `${url}?${dataSrc}`
+  }
+  return new Promise((resolve, reject) => {
+    const scriptEle = document.createElement('script')
+    scriptEle.src = generateUrl()
+    document.body.appendChild(scriptEle)
+    window[callbackName] = data => {
+      resolve(data)
+      document.removeChild(scriptEle)
+    }
+    scriptEle.onerror = function () { // 异常处理，也是很多人漏掉的部分
+      container.removeChild(script);
+      delete window[callbackName];
+      reject('something error hanppend!');
+    }
+  })
+}
+
+
