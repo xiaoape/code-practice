@@ -1,0 +1,34 @@
+<!DOCTYPE html>  
+<html>  
+<head>  
+<!-- 可以加crossOrigin属性 -->
+<img src="https://p9-passport.byteacctimg.com/img/user-avatar/078b5278f8f4329b1511063172f19b31~100x100.awebp">
+  
+</body>
+<script>
+  // 如果使用img加载不加crossOrigin，使用js绘制canvas，如果不加crossOrigin的话，canvas图片无法加载出来
+  // 如果使用img和js都不加，则能绘制出来图片，但是toDataURL会报错
+  // 都加，则所有的都正常显示也不报错
+  window.onload = () => {    
+    const imgurl = `https://p9-passport.byteacctimg.com/img/user-avatar/078b5278f8f4329b1511063172f19b31~100x100.awebp`;
+    const downloadedImg = new Image();
+    downloadedImg.src = imgurl;
+
+    const canvas = document.createElement('canvas')
+    const context = canvas.getContext("2d");
+    // downloadedImg.crossOrigin = 'anonymous';
+    try {
+      context.drawImage(downloadedImg, 0, 0);
+      document.body.appendChild(canvas);
+    } catch (err){
+      console.log('err:', err)
+    }
+    try {
+      canvas.toDataURL("image/png")
+    } catch (err) {
+      console.error(`Error: ${err}`);
+    }
+  }
+    
+</script>
+</html>
