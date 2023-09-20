@@ -1,4 +1,5 @@
 // 自定义的useScroll
+// 传入一个元素的引用，返回滚动的x,y值
 import {
     useState,
     useEffect

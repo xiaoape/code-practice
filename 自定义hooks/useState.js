@@ -17,11 +17,13 @@ const useXState = (initState) => {
             return typeof state === 'function' ? state(prev) : state
         })
     }
+    // 这里的useEffect换成useLayoutEffect如何？
     useEffect(() => {
         if (isUpdate.current) {
             isUpdate.current()
+            isUpdate.current = null
         }
-    })
+    }, [state])
 
     return [state, setXState]
 }

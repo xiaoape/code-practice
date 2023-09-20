@@ -1,7 +1,4 @@
-# 自定义hooks说明
-
-## 背景
-目前React hooks大行其道，正逐步取代Class写法，而发挥hooks的优势的一个很重要的方式就是使用自定义hooks
+# 自定义hooks
 
 ## 手写列表
 
@@ -10,6 +7,11 @@
 * useState
 * useScroll
 * usePrevious
+* useFetch
+* useScroll
+* useState
+* useUpdate
+* useSkipFirstEffect
 
 ## 相关资料
 
@@ -17,3 +19,6 @@
 
 1. https://ahooks.js.org/zh-CN/
 2. https://github.com/jaredLunde/react-hook
+
+## 好文推荐
+* [10分钟教你手写8个常用的自定义hooks](https://juejin.cn/post/6844904074433789959#heading-5)

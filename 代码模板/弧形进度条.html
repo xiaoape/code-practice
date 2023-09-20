@@ -1,0 +1,27 @@
+<!DOCTYPE html>  
+<html>  
+<body>  
+    <canvas id="myCanvas" width="500" height="500" style="border:1px solid #d3d3d3;">  
+        Your browser does not support the HTML5 canvas tag.  
+    </canvas>  
+  
+    <script>  
+        var canvas = document.getElementById("myCanvas");  
+        var ctx = canvas.getContext("2d");  
+  
+        // 画一个100度的弧线，颜色为红色  
+        ctx.beginPath();  
+        ctx.arc(250, 250, 100, 0, Math.PI / 3);  // 100度  
+        ctx.strokeStyle = 'red';  
+        ctx.lineWidth = 5;  
+        ctx.stroke();  
+  
+        // 画一个50度的弧线，颜色为蓝色，覆盖前一个弧线  
+        ctx.beginPath();  
+        ctx.arc(250, 250, 100, Math.PI / 6, Math.PI / 3);  // 50度  
+        ctx.strokeStyle = 'blue';  
+        ctx.lineWidth = 5;  
+        ctx.stroke();  
+    </script>  
+</body>  
+</html>
