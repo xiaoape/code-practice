@@ -4,6 +4,8 @@
 
 // 原理：使用 import() 加载模块时，它返回一个 Promise 对象，该 Promise 在模块加载完成后被解析。
 
+// 通过jsonp的方式，动态请求脚本，然后在回调中得到组件
+
 // 代码解析如下：
 
 function customImport(modulePath) {

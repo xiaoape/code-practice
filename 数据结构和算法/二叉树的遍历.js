@@ -1,5 +1,5 @@
 // 二叉树的遍历
-// 先序遍历
+// 先序遍历(根-左-右)
 var preListRec = []; //定义保存先序遍历结果的数组
 var preOrderRec = function (node) {
     if (node) { //判断二叉树是否为空
@@ -22,7 +22,7 @@ function preDfs(root, result = []) {
 }
 console.log(preDfs(tree, []))
 
-// 中序遍历
+// 中序遍历（左-根-右）
 var inListRec = []; //定义保存中序遍历结果的数组
 var inOrderRec = function (node) {
     if (node) { //判断二叉树是否为空
@@ -34,7 +34,7 @@ var inOrderRec = function (node) {
 inOrderRec(tree);
 console.log(inListRec);
 
-// 后序遍历
+// 后序遍历 (左-右-根)
 var postListRec = []; //定义保存后序遍历结果的数组
 var postOrderRec = function (node) {
     if (node) { //判断二叉树是否为空
