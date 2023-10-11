@@ -11,6 +11,8 @@
 // 调用三次就会发起三次网络请求
 // 现在需要优化 getUserInfo 这个方法， 保证 getUserInfo 方法3次调用后， 最终只会发出一次网络请求。
 
+// 直接在父容器里调用一次接口，然后将用户信息传到三个模块不行么？？？
+
 let userInfoPromise = null; // 用于存储获取用户信息的 Promise
 let userInfo = null; // 用于存储用户信息
 let requestCount = 0; // 请求计数器
