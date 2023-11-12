@@ -10,7 +10,7 @@ Object.prototype.copyFlat = function () {
     }
   }, [])
 }
-let arr = [3, 2, [5, 6]]
+let arr = [3, 2, [5, 6], [7,[8,9]]]
 console.log(arr.copyFlat()) // [3,2,5,6]
 
 // 事实上flat函数是要有一个num的参数的
@@ -27,6 +27,8 @@ const selfFlat = function (depth = 1) {
     }
   }, [])
 }
+
+console.log(selfFlat.call(arr, 2))
 const selfFlat2 = function (arr) {
   return arr.reduce((pre, cur) => {
     if (Array.isArray(cur)) {
