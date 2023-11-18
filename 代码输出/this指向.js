@@ -42,3 +42,15 @@ obj.pro.getPro(); // pro 这里函数的调用方式是对象[函数名]，所�
 obj.pro1.getPro1();  // window  箭头函数所在上一级词法作用域是window
 var fn = obj.foo
 fn(); // window 这里执行时所在的环境是window 所以当前this指向的是window
+
+
+// this绑定丢失
+
+var workshop = {
+  teacher:"17dian",
+  ask(question){
+     console.log(this.teacher,question)
+  }
+}
+let teacher = "dongyang";
+setTimeout(workshop.ask,100,"lost") // undefined lost。原因是let声明的变量并不是绑定到window，而setTimeout中的回调函数中this是指向的window
