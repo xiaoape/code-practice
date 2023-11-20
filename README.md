@@ -8,7 +8,7 @@
 关键字： 前端 手写代码 面试
 
 ## 如何使用
-[代码目录](https://github.com/xiaoape/code-practice/blob/main/catalogue.md)
+[代码目录](https://github.com/xiaoape/code-practice/blob/main/directory.md)
 
 ## 模板
 函数说明：可以是简短的几句话，也可以是一个链接
