@@ -45,7 +45,11 @@ fn(); // window 这里执行时所在的环境是window 所以当前this指向�
 
 
 // this绑定丢失
+// setTimeout中函数内的this是指向了window对象，这是由于`setTimeout()调用的代码运行在与所在函数`完全分离的执行环境上。
+// 这会导致这些代码中包含的 `this` 关键字会指向 `window` (或`全局`)对象。
+// 详细可参考[MDN setTimeout](https://developer.mozilla.org/zh-CN/docs/Web/API/Window/setTimeout)
 
+// 解决方法，bind函数，箭头函数，变量保存this
 var workshop = {
   teacher:"17dian",
   ask(question){
@@ -54,3 +58,4 @@ var workshop = {
 }
 let teacher = "dongyang";
 setTimeout(workshop.ask,100,"lost") // undefined lost。原因是let声明的变量并不是绑定到window，而setTimeout中的回调函数中this是指向的window
+setTimeout(workshop.ask.bind(workshop),100,"lost") // 17dian lost
