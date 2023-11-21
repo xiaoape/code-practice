@@ -17,7 +17,6 @@
   - `倒计时实现.js`
   - `导出excel.js`
   - `弧形进度条.html`
-- `代码目录.md`
 - `代码输出`
   - `promise执行顺序.js`
   - `this指向.js`
@@ -85,6 +84,7 @@
   - `转化树的字段.js`
   - `阿拉伯数字转汉字数字.js`
   - `随机数获取.js`
+  - `首字母大写.js`
 - `数据结构和算法`
   - `KMP算法.js`
   - `三路快排.js`
@@ -120,10 +120,12 @@
 - `自定义hooks`
   - `useDebounce.js`
   - `useFetch.js`
+  - `useMyEffect.js`
+  - `useMyState.js`
   - `usePrevious.js`
   - `useScroll.js`
+  - `useSetState.js`
   - `useSkipFirstEffect.js`
-  - `useState.js`
   - `useThrottle.js`
   - `useUpdate.js`
   - `自定义hooks说明.md`
