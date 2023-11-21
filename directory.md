@@ -28,9 +28,11 @@
   - `bind.js`
   - `call.js`
   - `createObj.js`
+  - `filter.js`
   - `flat.js`
   - `import函数.js`
   - `instanceOf.js`
+  - `jsonParse.js`
   - `map.js`
   - `new.js`
   - `pop.js`
@@ -53,6 +55,8 @@
   - `实现trim函数.js`
 - `开源实现`
   - `ssr简单过程.js`
+  - `webpack自定义loader_uppercaseLoader.js`
+  - `webpack自定义插件_addScriptPlugin.js`
   - `实现简易的redux.js`
   - `简易webpack实现.js`
   - `简易的co模块实现.js`
@@ -111,6 +115,7 @@
   - `最长公共前缀.js`
   - `栈实现.js`
   - `栈实现队列.js`
+  - `洗牌算法.js`
   - `设计LRU缓存机制.js`
   - `选择排序.js`
   - `链表.js`
@@ -129,8 +134,6 @@
   - `useThrottle.js`
   - `useUpdate.js`
   - `自定义hooks说明.md`
-- `自定义插件`
-  - `addScriptPlugin.js`
 - `设计模式`
   - `代理模式.js`
   - `单例模式.js`
@@ -149,7 +152,6 @@
   - `curry.js`
   - `debounce.js`
   - `deepClone.js`
-  - `filter.js`
   - `importExport.js`
   - `intersectionObserve实现懒加载.html`
   - `jsonp.js`
@@ -203,7 +205,6 @@
   - `数据双向绑定.js`
   - `斐波那契数列.js`
   - `时间分片解决大量数据渲染.js`
-  - `洗牌算法.js`
   - `浅拷贝.js`
   - `版本号排序.js`
   - `生成随机的不重复数组.js`
