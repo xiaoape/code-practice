@@ -14,12 +14,20 @@
 - `代码模板`
   - `BaseIcon.js`
   - `canvas图片跨域.html`
+  - `fetchWithCache.html`
+  - `intersectionObserve实现懒加载.html`
+  - `jsonp调用.html`
+  - `事件委托实践.html`
   - `倒计时实现.js`
+  - `图片拖拽.html`
   - `导出excel.js`
   - `弧形进度条.html`
+  - `接口重试.html`
+  - `控制并发数量5.html`
 - `代码输出`
   - `promise执行顺序.js`
   - `this指向.js`
+  - `webWorker执行顺序.js`
 - `原生API实现`
   - `JsonStrinigfy.js`
   - `Object.is实现.js`
@@ -64,7 +72,6 @@
 - `数据处理`
   - `DOM转JSON.js`
   - `RGB转换为HEX.js`
-  - `fetchWithCache.html`
   - `fetchWithCache.js`
   - `json还原成dom.js`
   - `tryCatch.js`
@@ -117,6 +124,7 @@
   - `栈实现.js`
   - `栈实现队列.js`
   - `洗牌算法.js`
+  - `获取树的最大深度.js`
   - `设计LRU缓存机制.js`
   - `选择排序.js`
   - `链表.js`
@@ -154,9 +162,7 @@
   - `debounce.js`
   - `deepClone.js`
   - `importExport.js`
-  - `intersectionObserve实现懒加载.html`
   - `jsonp.js`
-  - `jsonp调用.html`
   - `lazyMan.js`
   - `localStorage封装.js`
   - `lodash_get.js`
@@ -172,7 +178,6 @@
   - `throttle.js`
   - `串行执行promise.js`
   - `事件委托.js`
-  - `事件委托实践.html`
   - `使用promise封装ajax请求.js`
   - `偏函数实现.js`
   - `判断对象是否存在循环引用.js`
@@ -182,7 +187,6 @@
   - `取消重复请求.js`
   - `可拖拽的div.js`
   - `图片并发请求限制.js`
-  - `图片拖拽.html`
   - `图片预加载.js`
   - `基于axios取消重复请求封装.js`
   - `实现es6模板字符串.js`
@@ -195,10 +199,8 @@
   - `手写rem适配.js`
   - `找出一个元素所有的Input子元素.js`
   - `找到数组中第一个没有出现的正整数.js`
-  - `接口重试.html`
   - `控制并发数量.js`
   - `控制并发数量4.js`
-  - `控制并发数量5.html`
   - `控制并发请求数5.js`
   - `控制并发请求数量(通俗易懂).js`
   - `控制并发请求数量2.js`
