@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      .image-container {
+        display: flex;
+        flex-wrap: wrap;
+        height: 1000px; /* 为了产生滚动条，使得懒加载效果明显 */
+      }
+
+      .lazy-image {
+        width: 100%;
+        max-width: 600px;
+        margin: 20px auto;
+        opacity: 0; /* 图片初始时透明度为0 */
+        transition: opacity 0.5s ease-in-out; /* 添加过渡效果 */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="image-container">
+      <img
+        data-src="https://gtd.alicdn.com/sns_logo/i1/TB124_3NXXXXXasXVXXSutbFXXX.jpg_240x240xz.jpg"
+        class="lazy-image"
+        alt="Lazy Image 1"
+      />
+      <img
+        data-src="https://gtd.alicdn.com/sns_logo/i7/TB1IWtgQFXXXXcmXFXXSutbFXXX.jpg_240x240xz.jpg"
+        class="lazy-image"
+        alt="Lazy Image 2"
+      />
+      <img
+        data-src="https://gtd.alicdn.com/sns_logo/i1/TB1_f_PLXXXXXbVXpXXSutbFXXX.jpg_240x240xz.jpg"
+        class="lazy-image"
+        alt="Lazy Image 3"
+      />
+      <img
+        data-src="https://gtd.alicdn.com/sns_logo/i1/TB1DX3hIpXXXXXIaXXXSutbFXXX.jpg_240x240xz.jpg"
+        class="lazy-image"
+        alt="Lazy Image 3"
+      />
+      <img
+        data-src="https://gtd.alicdn.com/sns_logo/i6/TB1SIYrLXXXXXaAXpXXSutbFXXX.jpg_240x240xz.jpg"
+        class="lazy-image"
+        alt="Lazy Image 3"
+      />
+      <img
+        data-src="https://gtd.alicdn.com/sns_logo/i1/TB11yxeNVXXXXbwXFXXSutbFXXX.jpg_240x240xz.jpg"
+        class="lazy-image"
+        alt="Lazy Image 3"
+      />
+    </div>
+
+    <script>
+      function lazyLoad() {
+        const imgs = document.getElementsByTagName("img");
+        console.log(imgs, "imgs--");
+
+        const viewHeight =
+          window.innerHeight || document.documentElement.clientHeight;
+
+        for (let i = 0; i < imgs.length; i++) {
+          // 用可视区域高度减去元素顶部距离可视区域顶部高度
+          let distance = viewHeight - imgs[i].getBoundingClientRect().top;
+          console.log(viewHeight, imgs[i].getBoundingClientRect().top, "hhhh");
+          // 如果可视区域高度大于等于元素顶部可视区域顶部的搞不，说明元素露出
+          if (distance >= 0) {
+            // 给元素写入真实的src, 展示图片
+            imgs[i].src = imgs[i].getAttribute("data-src");
+            imgs[i].style.opacity = 1; // 图片可见时设置透明度为1
+          }
+        }
+      }
+
+      // 初始加载一次
+      lazyLoad();
+
+      // 滚动时触发懒加载
+      window.addEventListener("scroll", lazyLoad);
+    </script>
+  </body>
+</html>
