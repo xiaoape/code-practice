@@ -15,11 +15,13 @@
   - `BaseIcon.js`
   - `canvas图片跨域.html`
   - `fetchWithCache.html`
+  - `getBoundingClientRect实现懒加载.html`
   - `intersectionObserve实现懒加载.html`
   - `jsonp调用.html`
   - `事件委托实践.html`
   - `倒计时实现.js`
   - `图片拖拽.html`
+  - `图片预加载.html`
   - `导出excel.js`
   - `弧形进度条.html`
   - `接口重试.html`
@@ -119,6 +121,7 @@
   - `数据结构和算法好文推荐.md`
   - `数据结构和算法必读.md`
   - `数组归纳.js`
+  - `无向图的遍历.js`
   - `无重复字符的最长字串.js`
   - `最长公共前缀.js`
   - `栈实现.js`

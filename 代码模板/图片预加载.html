@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const imgList = [
+        "https://img.youpin.mi-img.com/editor1/73586af91be9ac959ae1100ff4124f90.png?w=678&h=400",
+        "https://img.youpin.mi-img.com/editor1/ac3f55427f9b207d62c2e9bbc61c62bd.png?w=1125&h=1330",
+        "https://img.youpin.mi-img.com/editor1/79617dd85ecaab1b514a8c61cfed0eec.png?w=340&h=340",
+        "https://img.youpin.mi-img.com/editor1/9881461612818889e3e12f5714fbc9c5.png?h=2003&w=1125",
+        "https://img.youpin.mi-img.com/editor1/968f95199e1e6eda1f1996df3f844de0.png?h=1330&w=1125",
+      ];
+
+      var promiseAll = imgList.map(function (item, index) {
+        return new Promise(function (resolve, reject) {
+          var img = new Image();
+          img.onload = function () {
+            img.onload = null;
+            resolve(img);
+          };
+          img.error = function () {
+            reject("图片加载失败");
+          };
+          img.src = item;
+        });
+      });
+      Promise.all(promiseAll).then(
+        function () {
+          // 图片全部加载完成，进行下一步
+          console.log("图片全部加载");
+        },
+        function (err) {
+          console.log(err);
+        }
+      );
+    </script>
+  </body>
+</html>
